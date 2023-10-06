@@ -22,7 +22,8 @@
     "./start/kernel",
     "./start/bull",
     "./start/timezone",
-    "./start/validator"
+    "./start/validator",
+    "./start/limiter"
   ],
   "providers": [
     "./providers/AppProvider",
@@ -34,7 +35,8 @@
     "@adonisjs/lucid",
     "@adonisjs/auth",
     "@rocketseat/adonis-bull",
-    "adonis-lucid-filter"
+    "adonis-lucid-filter",
+    "@adonisjs/limiter"
   ],
   "metaFiles": [
     {
@@ -46,15 +48,21 @@
       "reloadServer": false
     }
   ],
-  "aceProviders": ["@adonisjs/repl"],
+  "aceProviders": [
+    "@adonisjs/repl"
+  ],
   "tests": {
     "suites": [
       {
         "name": "functional",
-        "files": ["tests/functional/**/*.spec(.ts|.js)"],
+        "files": [
+          "tests/functional/**/*.spec(.ts|.js)"
+        ],
         "timeout": 60000
       }
     ]
   },
-  "testProviders": ["@japa/preset-adonis/TestsProvider"]
+  "testProviders": [
+    "@japa/preset-adonis/TestsProvider"
+  ]
 }

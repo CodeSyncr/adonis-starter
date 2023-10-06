@@ -13,6 +13,27 @@ export default class User extends BaseModel {
   public password: string
 
   @column()
+  public firstName: string
+
+  @column()
+  public lastName: string
+
+  @column()
+  public mobileNumber: string
+
+  @column()
+  public isRoot: boolean
+
+  @column({ prepare: (value: Object) => JSON.stringify(value || null) })
+  public organization: object
+
+  @column({ prepare: (value: Object) => JSON.stringify(value || null) })
+  public meta: object
+
+  @column({ prepare: (value: Object) => JSON.stringify(value || null) })
+  public setting: object
+
+  @column()
   public rememberMeToken: string | null
 
   @column.dateTime({ autoCreate: true })
@@ -22,7 +43,7 @@ export default class User extends BaseModel {
   public updatedAt: DateTime
 
   @beforeSave()
-  public static async hashPassword (user: User) {
+  public static async hashPassword(user: User) {
     if (user.$dirty.password) {
       user.password = await Hash.make(user.password)
     }

@@ -35,7 +35,8 @@
       "@adonisjs/lucid",
       "@adonisjs/auth",
       "@rocketseat/adonis-bull",
-      "adonis-lucid-filter"
+      "adonis-lucid-filter",
+      "@adonisjs/limiter"
     ]
   }
 }

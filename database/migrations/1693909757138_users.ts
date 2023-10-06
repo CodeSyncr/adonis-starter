@@ -7,6 +7,15 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('email', 255).notNullable().unique()
+      table.string('first_name', 255).notNullable()
+      table.string('mobile_number').notNullable()
+
+      table.json('organization').nullable().defaultTo(null)
+      table.json('meta').nullable().defaultTo(null)
+      table.json('setting').nullable().defaultTo(null)
+      table.boolean('is_root').nullable().defaultTo(false)
+      table.string('last_name', 255).nullable().defaultTo(null)
+
       table.string('password', 180).notNullable()
       table.string('remember_me_token').nullable()
 

@@ -76,6 +76,22 @@ const authConfig: AuthConfig = {
         model: () => import('App/Models/User'),
       },
     },
+    pat: {
+      driver: 'oat',
+      tokenProvider: {
+        type: 'pat',
+        driver: 'database',
+        table: 'api_tokens',
+        foreignKey: 'user_id',
+      },
+
+      provider: {
+        driver: 'lucid',
+        identifierKey: 'id',
+        uids: ['email'],
+        model: () => import('App/Models/User'),
+      },
+    },
     web: {
       driver: 'session',
       provider: {
