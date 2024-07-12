@@ -36,7 +36,8 @@
     "@adonisjs/auth",
     "@rocketseat/adonis-bull",
     "adonis-lucid-filter",
-    "@adonisjs/limiter"
+    "@adonisjs/limiter",
+    "@adonisjs/redis"
   ],
   "metaFiles": [
     {
